@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+      body {
+        background: #3a4f22;
+        margin: 0px;
+      }
+    
+      .container {
+        display: grid;
+        border: px solid  red;
+        height: 100vh;
+        width: 100vw;
+        grid-template-areas:
+          "LogoBar Video Video"
+          "SideBar Top Top"
+          "SideBar Picture Content"
+          "SideBar Footer Footer2";
+        grid-template-columns:150px auto;
+        grid-template-rows:400px 40px auto auto;
+        background-image: -webkit-linear-gradient(#7ea34f, #3a4f22);
+
+      }
+      .item-LogoBar {
+        position: -webkit-sticky;
+        top: 0;
+        padding: 10px;
+        /*border: 0px solid lightskyblue;*/
+        border-bottom: 0px solid black;
+        grid-area: LogoBar;
+        border-right: 3px solid  rgb(255,215,0);
+        z-index: 1;
+      }
+
+      .item-Video {
+        background-image: url('Tree.jpg');
+        background-image: url('img/TheMaster2.mp4');
+        background-repeat: no-repeat;
+        background-size:cover;       
+        background-position: center; 
+        border: 0px solid lightskyblue;
+        grid-area: Video;
+      }
+
+      .item-SideBar {
+        /*border: 0px solid lightskyblue;*/
+        border-top: 0px solid black;
+        grid-area: SideBar;
+        border-right: 3px solid  rgb(255,215,0);
+      }
+
+      .item-Content {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        background: white;
+        /*border: 0px solid lightskyblue;*/
+        grid-area: Content;
+      }
+
+      .item-Footer {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: darkgray;
+        padding: 20px;
+        background: black;
+        /*border: 0px solid lightskyblue;*/
+        grid-area: Footer;
+      }
+
+      .item-Footer2 {
+        text-align: right;
+        vertical-align: middle;
+        padding: 20px;
+        background: black;
+        /*border: 0px solid lightskyblue;*/
+        grid-area: Footer2;
+      }
+
+      .item-Picture {
+        width:100%;
+        padding: 20px;
+        background: white;
+        /*border: 0px solid lightskyblue;*/
+        grid-area: Picture;
+      }
+
+      .item-Title {
+        background: white;
+        grid-area: Top;
+
+      }
+
+      .centered {
+        padding-top: 165px;
+        text-align: center;
+        vertical-align: middle;
+        mix-blend-mode: screen;
+        font-weight: bold;
+      }
+
+      img {
+      width: 100%;
+      }
+
+      .button {
+        margin-top: 10px;
+        font-weight: bold;
+        ;
+        font-size: 13px;
+        width: 100%;
+        border-radius: 50px;
+        cursor: pointer;
+        border: 0px solid white;
+        background: #90B755;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+
+
+        color: #fff;
+  /*For IE*/
+      /* background-color: #4caf50; Green background */
+      /* border: 1px solid green; Green border */
+      /* color: white; White text */
+      /* padding: 10px 3vw;Some padding */
+      /* cursor: pointer; Pointer/hand icon */
+      /* width: 100%; Set a width if needed */
+      /* display: block; Make the buttons appear below each other */
+      }
+
+      button > span {
+      display: inline-block;
+      padding: 8px 16px;
+      background: linear-gradient(45deg, #fff 50%, white 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+    }
+    button:after {
+      border-radius: 50px;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(45deg, rgb(255,215,0) 50%, transparent 50%);
+      z-index: -2;
+    }
+
+    button > span,
+    button:after {
+      background-size: 300%;
+      background-position: 100%;
+      transition: 1s, font-size 0.2s;
+    }
+
+    button:hover > span,
+    button:hover:after {
+      background-position: 0;
+
+      color: orangeRed;
+      /*For IE*/
+    }
+
+    .txt{
+      color: darkolivegreen;
+      padding-top: 8px;
+      font-size: 33px;
+      text-align: center;
+      font-weight: bold;      
+    }
+
+    .txt2{    
+      font-size:60px;
+    }
+
+    .txt3{  
+      font-size:22px;
+    }
+
+    .footerLink{
+      width: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .image1{
+      padding-top: auto;
+      padding-bottom: auto;
+      width: 20px; 
+      padding-left: 0px;
+      padding-right: 10px;
+    }
+
+    @media only screen and (max-width: 540px ){
+      .container {
+        display: grid;
+        border: px solid  red;
+        height: 100vh;
+        width: 100vw;
+        grid-template-areas:
+          "LogoBar Video Video"
+          "SideBar Top Top"
+          "SideBar Picture Content"
+          "SideBar Footer Footer2";
+        grid-template-columns:60px auto;
+        grid-template-rows:235px 40px auto 100px;
+      }
+
+      .button {
+        border-radius: 50px;
+        font-weight: bold;
+        width: 100%;
+        cursor: pointer;
+        border: 0px solid white;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+
+
+        color: #fff;
+        font-size: 6px;
+      }
+
+      button > span {
+      display: inline-block;
+      padding: 9px 0px;
+      background: linear-gradient(45deg, #fff 50%, white 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      }
+
+      button:after {
+      border-radius: 50px;
+    }
+
+    .image1{
+      width: 20px; 
+      padding-left: 0px;
+    }
+
+    .item-Footer {
+        font-size: 0;
+        color: darkgray;
+        padding: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+
+        /*border: 0px solid lightskyblue;*/
+        grid-area: Footer;
+      }
+
+      .txt2{    
+      font-size:40px;
+      }
+
+      .txt3{  
+        line-height: 35px;
+        font-size:15px;
+      }
+
+      .centered {
+        padding-top: 90px;
+        text-align: center;
+        vertical-align: middle;
+        mix-blend-mode: screen;
+        font-weight: bold;
+      }
+
+    }
+
+    /* Chrome 29+ */
+    @media screen and (-webkit-min-device-pixel-ratio:0)
+      and (min-resolution:.001dpcm) { 
+        .item-Video {
+        background-image: url('img/TheMaster2.gif');
+      }
+    }
+
+    /* Chrome 22-28 */
+    @media screen and(-webkit-min-device-pixel-ratio:0) {
+      .item-Video {
+        background-image: url('img/TheMaster2.gif');
+      }
+    }
+
+  </style>
+</head>
+<body>
+      <div class="container">
+        <div class="item-LogoBar">
+
+          <a href="www.cochransd.com">
+            <img
+            src="https://saintthomasministry.com/wp-content/uploads/2020/01/Fun-Logo33.png"
+          />
+          </a>
+          
+        <button class="button"><span>HOME</span></button>
+        <button class="button"><span>COURSES</span></button>
+        <button class="button"><span>TUITION</span></button>
+        <button class="button"><span>BELIEFS</span></button>
+        <button class="button"><span>ABOUT US</span></button>
+        </div>
+
+        <div class="item-Video">
+
+          <div class="centered"><span style="background-color: rgb(233, 233, 233); padding-left: 10px;
+            padding-right: 10px;" class=txt2>WELCOME</span>
+            <br>
+            <span style="color: white;" class=txt3>To Saint Thomas School of Ministry</span></div>
+
+        </div>
+
+        <div class="item-SideBar"><p></p></div>
+        <div class="item-Title"><div class="txt">Our Mission</div> </div>
+
+        <div class="item-Picture"><img src="img/Orin4.png" alt="" style="width: 100%; max-width: 250px;"></div>
+
+        <div class="item-Content">         
+          <p>Welcome Saint Thomas School of Ministry (STSM). Our mission is to offer students an affordable, high-quality Christian education that is flexible with regards to location and schedule. ​
+        </br>
+        </br>
+          Our instruction and programs of education are geared towards Ministers and Pastors looking to spread the word of God to developing countries like Africa, Asia, and South America.
+        <br>
+        <br>
+        -Orin Sharp
+        
+        
+        </p>
+        
+        </div>
+        <div class="item-Footer"><p><span style="color:white; font-weight: bold;">Thomas School of Ministry</span>
+          <br>
+          412 Old Trolley Road
+          <br>
+          Summerville, SC 29486
+          <br>
+          (843) 981-0264
+        </p></div>
+        <div class="item-Footer2"><p>
+
+          
+          <a href="www.cochransd.com"><img src="img/Facebook.png" class="image1"></a>
+          <a href="www.cochransd.com"><img src="img/Instagram.png"class="image1"></a>
+          <a href="www.cochransd.com"><img src="img/Twitter.png"class="image1"></a>
+
+        </p></div>
+
+        </div>
+</body>
